@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pref_popularity">popular</string>
+    <string name="pref_rating">top_rated</string>
+    <string name="pref_fav">favorites</string>
+    <string name="poster_prefix">http://image.tmdb.org/t/p/w185</string>
+    <string name="background_prefix">http://image.tmdb.org/t/p/w300</string>
+    <string name="image_folder">PopularMovies</string>
+
+
+</resources>
