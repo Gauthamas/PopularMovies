@@ -9,4 +9,7 @@ The app includes the following features
 * UI designed for phones as well as tablets.`
 * Detailed screen showing reviews, trailers, posters.
 
+## Libraries
+- [Butter Knife](https://github.com/JakeWharton/butterknife) 
+
 
