@@ -1,4 +1,4 @@
-# PopularMovies
+# Popular Movies
 Popular movies app developed as part of course work for Android development nanodegree.
 
 ## Features 
