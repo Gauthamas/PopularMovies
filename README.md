@@ -11,5 +11,10 @@ The app includes the following features
 
 ## Libraries
 - [Butter Knife](https://github.com/JakeWharton/butterknife) 
+- [Stetho](https://github.com/facebook/stetho) 
+- [Retrofit](https://github.com/square/retrofit)
+- [Schematic](https://github.com/SimonVT/schematic)
+- [Picasso](https://github.com/square/picasso)
+
 
 
