@@ -1,6 +1,8 @@
 # Popular Movies
 Popular movies app developed as part of course work for Android development nanodegree.
 
+![](https://github.com/Gauthamas/PopularMovies/blob/master/images/pop_tab.png)
+
 ## Features 
 
 The app includes the following features
