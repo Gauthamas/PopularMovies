@@ -21,7 +21,7 @@ public class GetMovieDataAdapter {
     static GetMovieDataAdapter sMovieDataAdapter;
     static final String MOVIE_URL = "http://api.themoviedb.org";
     //MOVIE_API key removed for confidentiality purposes
-    static final String MOVIE_API = "";
+    static final String MOVIE_API = "8ec244a6354aa06b7c7a82112ae1e7d4";
 
     public GetMovieDataAdapter() {
         mRestAdapter = new RestAdapter.Builder()
