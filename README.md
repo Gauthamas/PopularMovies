@@ -2,7 +2,11 @@
 Popular movies app developed as part of course work for Android development nanodegree.
 
 ![](https://github.com/Gauthamas/PopularMovies/blob/master/images/pop_pho.png)
+
+
 ![](https://github.com/Gauthamas/PopularMovies/blob/master/images/pop_pho1.png)
+
+
 ![](https://github.com/Gauthamas/PopularMovies/blob/master/images/pop_tab1.png)
 
 ## Features 
