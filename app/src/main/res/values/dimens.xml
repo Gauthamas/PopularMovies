@@ -8,6 +8,9 @@
     <dimen name="article_keylines">72dp</dimen>
     <dimen name="article_titles">20sp</dimen>
     <dimen name="article_small">10sp</dimen>
+    <dimen name="article_body">16sp</dimen>
     <dimen name="cardview_corner">8dp</dimen>
+    <dimen name="cardview_margin">4dp</dimen>
+    <dimen name="cardview_elevation">8dp</dimen>
     <dimen name="drawable_padding">0dp</dimen>
 </resources>
