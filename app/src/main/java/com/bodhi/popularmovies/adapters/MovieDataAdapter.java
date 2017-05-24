@@ -1,13 +1,18 @@
 package com.bodhi.popularmovies.adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bodhi.popularmovies.data.MovieData;
@@ -40,6 +45,11 @@ public class MovieDataAdapter extends RecyclerView.Adapter<MovieDataAdapter.View
         @BindView(R.id.movie_poster)
         public ImageView poster;
 
+        @BindView(R.id.info)
+        public LinearLayout info;
+
+
+
 
         public ViewHolder(CardView v) {
             super(v);
@@ -68,13 +78,42 @@ public class MovieDataAdapter extends RecyclerView.Adapter<MovieDataAdapter.View
 
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         MovieData curr = mMovies.get(position);
+
+        com.squareup.picasso.Callback callback = new com.squareup.picasso.Callback(){
+
+            @Override
+            public void onSuccess() {
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) holder.poster.getDrawable();
+                Palette.from(bitmapDrawable.getBitmap()).generate(new Palette.PaletteAsyncListener() {
+                    public void onGenerated(Palette p) {
+                        Palette.Swatch vibrantSwatch = p.getVibrantSwatch();
+                        if (vibrantSwatch != null) {
+                            holder.info.setBackgroundColor(vibrantSwatch.getRgb());
+                            holder.title.setTextColor(vibrantSwatch.getTitleTextColor());
+                            holder.rating.setTextColor(vibrantSwatch.getTitleTextColor());
+                        }
+
+                    }
+                });
+
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        };
+
+
         if (curr.isFile) {
-            Picasso.with(activityContext).load(new File(curr.posterURI)).error(R.drawable.ic_face_black_24dp).into(holder.poster);
+            Picasso.with(activityContext).load(new File(curr.posterURI)).error(R.drawable.ic_face_black_24dp).into(holder.poster, callback);
         } else {
-            Picasso.with(activityContext).load(curr.posterURI).error(R.drawable.ic_face_black_24dp).into(holder.poster);
+            Picasso.with(activityContext).load(curr.posterURI).error(R.drawable.ic_face_black_24dp).into(holder.poster, callback);
+
         }
+
 
         holder.title.setText(curr.title);
         holder.rating.setText(Double.toString(curr.rating));
